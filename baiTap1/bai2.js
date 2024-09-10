@@ -1,21 +1,23 @@
-var container = document.getElementById('container');
-var output = '';
-var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'; // Chữ cái để thêm vào mỗi hộp
-var letterIndex = 0; // Chỉ số của chữ cái hiện tại
+const container = document.getElementById('container');
+        const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
+                         'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 
+                         'U', 'V', 'W', 'X', 'Y', 'Z'];
+        let output = '';
+        let letterIndex = 0;
 
-for (var i = 0; i < 5; i++) { 
-    for (var j = 0; j < 10; j++) { 
-        var letter = letters[letterIndex % letters.length];
-        letterIndex++; 
-        output += '<div class="box" onclick="showPosition(' + (i + 1) + ', ' + (j + 1) + ')">' + letter + '</div>';
-    }
-    output += '<br>';
-}
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 10; j++) {
+                const letter = letters[letterIndex]; // Lấy chữ cái từ mảng
+                const index = i * 10 + j + 1; // Tính vị trí từ 1 đến hết
+                output += `<div class="box" onclick="alert('Vị trí: ${index}')">${letter}</div>`;
+                letterIndex++; // Tăng chỉ số chữ cái sau mỗi ô
 
+                // Đặt lại chỉ số nếu vượt quá chiều dài mảng
+                if (letterIndex >= letters.length) {
+                    letterIndex = 0;
+                }
+            }
+            output += '<br>';
+        }
 
-container.innerHTML = output;
-
-// Hàm hiển thị vị trí của hộp khi bấm vào
-function showPosition(rowIndex, colIndex) {
-    alert('Hàng ' + rowIndex + ', Cột ' + colIndex);
-}
+        container.innerHTML = output;
