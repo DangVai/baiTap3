@@ -1,0 +1,10 @@
+.box {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(233, 219, 219);
+    display: inline-block;
+    margin: 2px; /* Khoảng cách giữa các hộp */
+}
+#container {
+    white-space: nowrap; /* Đảm bảo không có xuống dòng trong container */
+}
