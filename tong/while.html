@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    number:
+    <input type="text" id="number" name="number"/>
+    <input type="button" onclick="myFunction()" value="ok"/>
+    <p>
+        <span id="demo"></span>
+    </p>
+    <script>
+        function myFunction(){
+            var sum = 0;
+            var number = document.getElementById("number").value;
+            var i = 1;
+            do{
+                sum += i;
+                i++;
+
+            }while (i <= number)
+            document.getElementById("demo").innerHTML = sum;
+        }
+    </script>
+</body>
+</html>

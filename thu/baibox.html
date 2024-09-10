@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid of Boxes</title>
+    <style>
+        .box {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid #000;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+
+    <script>
+        const container = document.getElementById('container');
+        const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 
+                         'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 
+                         'U', 'V', 'W', 'X', 'Y', 'Z'];
+        let output = '';
+        let letterIndex = 0;
+
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 10; j++) {
+                const letter = letters[letterIndex]; // Lấy chữ cái từ mảng
+                const index = i * 10 + j + 1; // Tính vị trí từ 1 đến hết
+                output += `<div class="box" onclick="alert('Vị trí: ${index}')">${letter}</div>`;
+                letterIndex++; // Tăng chỉ số chữ cái sau mỗi ô
+
+                // Đặt lại chỉ số nếu vượt quá chiều dài mảng
+                if (letterIndex >= letters.length) {
+                    letterIndex = 0;
+                }
+            }
+            output += '<br>';
+        }
+
+        container.innerHTML = output;
+    </script>
+</body>
+</html>

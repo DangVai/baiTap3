@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Hộp</title>
+    <style>
+        .box {
+            width: 30px;
+            height: 30px;
+            background-color: rgb(233, 219, 219);
+            display: inline-block;
+            margin: 2px; /* Khoảng cách giữa các hộp */
+        }
+        #container {
+            white-space: nowrap; /* Đảm bảo không có xuống dòng trong container */
+        }
+    </style>
+</head>
+<body>
+
+<div id="container"></div> <!-- Thẻ chứa các hộp -->
+
+<script>
+    var container = document.getElementById('container');
+    var output = '';
+    // Vòng lặp lồng nhau để tạo 5 hàng và 6 cột
+    for (var i = 0; i < 5; i++) { // Tạo 5 hàng
+        for (var j = 0; j < 6; j++) { // Tạo 6 hộp trong mỗi hàng
+            output += '<div class="box">a</div>';
+        }
+        output += '<br>'; // Xuống dòng sau khi hoàn thành 1 hàng
+    }
+
+    // Hiển thị kết quả trong thẻ container
+    container.innerHTML = output;
+</script>
+
+</body>
+</html>
