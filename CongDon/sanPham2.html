@@ -1,0 +1,51 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sanPham2.css">
+    <script src="sanPham2.js" defer></script> <!-- Di chuyển vào head và thêm thuộc tính defer -->
+</head>
+<body>
+    <form action="frm">
+        <p>
+            <label>
+                Product Name:
+                <input type="text" name="pname" id="pname"/>
+            </label>
+        </p>
+        <p>
+            <label>
+                Product Quality:
+                <input type="number" name="qty" id="qty"/>
+            </label>
+        </p>
+        <p>
+            <label>
+                Product Price:
+                <input type="number" name="up" id="up" step="0.01"/>
+            </label>
+        </p>
+    
+        <p>
+            <button type="button" onclick="Add()">Add</button> <!-- Sửa type thành button -->
+        </p>
+    </form>
+    <table id="tbl">
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Sub-total</th>
+        </tr>
+        <tr>
+            <td colspan="4">Total</td>
+            <td id="total"></td>
+        </tr>
+    </table>
+</body>
+</html>
